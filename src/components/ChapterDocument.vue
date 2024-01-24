@@ -5,6 +5,13 @@ const props = defineProps({
     required: true,
   },
 });
+
+MathJax.typesetClear();
+MathJax.typesetPromise()
+  .then(() => {
+    MathJax.typesetPromise();
+  })
+  .catch((err) => console.log(err.message));
 </script>
 
 <template>
