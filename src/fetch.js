@@ -8,10 +8,12 @@ export function useFetch(url) {
     data.value = null;
     error.value = null;
 
-    fetch(toValue(url), { cache: 'force-cache' })
-      .then((res) => res.json())
-      .then((json) => (data.value = json))
-      .catch((err) => (error.value = err));
+    if (url) {
+      fetch(toValue(url), { cache: 'force-cache' })
+        .then((res) => res.json())
+        .then((json) => (data.value = json))
+        .catch((err) => (error.value = err));
+    }
   };
 
   watchEffect(() => {

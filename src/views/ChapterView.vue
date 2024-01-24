@@ -3,20 +3,24 @@ import { ref, watchEffect, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import { useFetch } from '../fetch.js';
 import ChapterDocument from '../components/ChapterDocument.vue';
+import Modal from '../components/Modal.vue';
 
 const route = useRoute();
 
-const url = ref(null);
+const chapterUrl = ref(null);
+const articleUrl = ref(null);
+const showModal = ref(false);
 
 watchEffect(() => {
   const path = `${route.params.course}/${route.params.chapter}`;
-  url.value = `https://app.lexdocta.com/api/courses/${path}`;
+  chapterUrl.value = `https://app.lexdocta.com/api/courses/${path}`;
 });
 
-const { data, error } = useFetch(url);
+const { data: chapterData, error: chapterError } = useFetch(chapterUrl);
+const { data: articleData, error: articleError } = useFetch(articleUrl);
 
 watchEffect(async () => {
-  const content = data.value?.content;
+  const content = chapterData.value?.content;
   if (content === undefined) {
     return;
   }
@@ -31,9 +35,10 @@ watchEffect(async () => {
   }
 });
 
-function handleArt() {
-  const articleId = +this.dataset.art;
-  console.log(articleId);
+async function handleArt() {
+  const id = +this.dataset.art;
+  articleUrl.value = `https://app.lexdocta.com/api/articles/id?aid=${id}&lang=fr`;
+  showModal.value = true;
 }
 
 function handleTab() {
@@ -45,15 +50,39 @@ function handleTab() {
 
 <template>
   <div class="chapter">
-    <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
-    <div v-else-if="data">
-      <ChapterDocument :name="data.name" :content="data.content" />
+    <div v-if="chapterError">
+      Oops! Error encountered: {{ chapterError.message }}
+    </div>
+    <div v-else-if="chapterData">
+      <ChapterDocument
+        :name="chapterData.name"
+        :content="chapterData.content"
+      />
     </div>
     <div v-else>Loading...</div>
   </div>
+  <Teleport to="body">
+    <!-- use the modal component, pass in the prop -->
+    <Modal :show="showModal" @close="showModal = false">
+      <template #header v-if="articleData">
+        Art. {{ articleData.name }}
+      </template>
+      <template #body v-if="articleData">
+        <ul class="article-index">
+          <li v-for="(item, index) in articleData.index" :key="index">
+            {{ item }}
+          </li>
+        </ul>
+        <div v-html="articleData.content"></div>
+      </template>
+    </Modal>
+  </Teleport>
 </template>
 
 <style>
+.article-index {
+  font-size: 0.9em;
+}
 @media (min-width: 960px) {
 }
 </style>
