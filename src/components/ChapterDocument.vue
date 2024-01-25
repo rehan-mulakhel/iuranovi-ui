@@ -6,10 +6,10 @@ const props = defineProps({
   },
 });
 
-MathJax.typesetClear();
-MathJax.typesetPromise()
+window.MathJax.typesetClear();
+window.MathJax.typesetPromise()
   .then(() => {
-    MathJax.typesetPromise();
+    window.MathJax.typesetPromise();
   })
   .catch((err) => console.log(err.message));
 </script>
