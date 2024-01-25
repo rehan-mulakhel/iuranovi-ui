@@ -86,6 +86,10 @@ watchEffect(() => {
   text-align: center;
 }
 
+.course img {
+  max-width: 100%;
+}
+
 .course a {
   border-bottom: 1px solid blue;
   color: #00f;

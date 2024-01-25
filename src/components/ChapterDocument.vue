@@ -91,6 +91,9 @@ function handleTab() {
 </template>
 
 <style scoped>
+.article-index {
+  font-size: 0.9em;
+}
 @media (min-width: 960px) {
 }
 </style>
