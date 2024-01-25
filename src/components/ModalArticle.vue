@@ -14,7 +14,7 @@ function onClose(event) {
 
 <template>
   <Transition name="modal">
-    <div v-if="show" class="modal-mask" @click="onClose">
+    <div v-if="props.show" class="modal-mask" @click="onClose">
       <div class="modal-container">
         <div class="modal-header">
           <div>

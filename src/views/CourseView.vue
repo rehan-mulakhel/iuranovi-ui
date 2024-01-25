@@ -1,14 +1,18 @@
 <script setup>
-import { ref, provide } from 'vue';
+import { ref, watchEffect, provide } from 'vue';
 import { RouterView, useRoute } from 'vue-router';
 import { useFetch } from '../fetch.js';
 import CourseNavigation from '../components/CourseNavigation.vue';
 
 const route = useRoute();
-
-const url = ref(`https://app.lexdocta.com/api/courses/${route.params.course}`);
+const url = ref(null);
 const { data, error } = useFetch(url);
 provide('course', { data, error });
+
+watchEffect(() => {
+  const slug = route.params.course;
+  url.value = `https://app.lexdocta.com/api/courses/${slug}`;
+});
 </script>
 
 <template>
@@ -90,6 +94,10 @@ provide('course', { data, error });
 
 mark {
   background-color: #eee389;
+}
+
+header [data-art] {
+  color: #ffbe6f;
 }
 
 [data-art] {

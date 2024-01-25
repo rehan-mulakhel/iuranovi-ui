@@ -36,6 +36,19 @@ const router = createRouter({
       component: () => import('../views/ErrorNotFoundView.vue'),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (to.hash) {
+          resolve({ el: to.hash, behavior: 'smooth' });
+        }
+        if (savedPosition) {
+          resolve(savedPosition);
+        }
+        resolve({ left: 0, top: 0 });
+      }, 500);
+    });
+  },
 });
 
 export default router;
