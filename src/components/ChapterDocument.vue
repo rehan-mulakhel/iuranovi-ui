@@ -76,7 +76,7 @@ function handleTab() {
     <!-- use the modal component, pass in the prop -->
     <ModalArticle :show="showModal" @close="showModal = false">
       <template #header v-if="articleData">
-        Art. {{ articleData.name }}
+        Art. <span v-html="articleData.name"></span>
       </template>
       <template #body v-if="articleData">
         <ul class="article-index">
@@ -85,14 +85,31 @@ function handleTab() {
           </li>
         </ul>
         <div v-html="articleData.content"></div>
+        <ol
+          class="article-footnotes"
+          v-if="articleData.note || articleData.footnotes"
+        >
+          <li v-if="articleData.note" v-html="articleData.note"></li>
+          <li
+            v-for="(note, index) in articleData.footnotes"
+            :key="index"
+            v-html="note"
+          ></li>
+        </ol>
       </template>
     </ModalArticle>
   </Teleport>
 </template>
 
 <style scoped>
-.article-index {
+.article-index,
+.article-footnotes {
   font-size: 0.9em;
+}
+.article-footnotes {
+  border-top: 1px solid var(--color-border);
+  padding-left: 32px;
+  padding-top: 16px;
 }
 @media (min-width: 960px) {
 }
