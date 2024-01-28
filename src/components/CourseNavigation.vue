@@ -84,7 +84,7 @@ watch(
 
 <style scoped>
 .course-breadcrumb {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color-border-soft);
   list-style: none;
   overflow: hidden;
   padding: 10px 16px;
@@ -99,7 +99,6 @@ watch(
 
 .course-breadcrumb li + li:before {
   padding: 8px;
-  color: #000;
   content: '/ ';
 }
 
@@ -114,16 +113,12 @@ watch(
 }
 
 .chapters-nav a {
-  background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid var(--color-border-dark);
   flex: 1 1 0px;
   height: 20px;
 }
 
 .chapters-nav .router-link-active {
-  background-color: var(--color-text);
-}
-
-@media (min-width: 960px) {
+  background-color: var(--c-black-dark);
 }
 </style>

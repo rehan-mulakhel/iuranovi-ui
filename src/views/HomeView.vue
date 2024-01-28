@@ -25,7 +25,7 @@ const courses = [
 </script>
 
 <template>
-  <main>
+  <div>
     <h1>Le droit suisse</h1>
     <p>
       Iuranovi est une plate-forme qui offre des cours de droit suisse en ligne.
@@ -35,12 +35,28 @@ const courses = [
       monde peut consulter nos contenus.
     </p>
 
-    <ul>
+    <ul id="courses-list">
       <li v-for="(course, index) in courses" :key="index">
         <RouterLink :to="`/course/${course.slug}`">
           {{ course.name }}
         </RouterLink>
       </li>
     </ul>
-  </main>
+  </div>
 </template>
+
+<style scoped>
+#courses-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+#courses-list li {
+  background-color: var(--c-orange-soft);
+  color: var(--color-text);
+  padding: 8px;
+  margin: 10px auto;
+  max-width: 400px;
+  width: 95%;
+}
+</style>

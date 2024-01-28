@@ -40,6 +40,4 @@ function process(content) {
 </template>
 
 <style>
-@media (min-width: 960px) {
-}
 </style>

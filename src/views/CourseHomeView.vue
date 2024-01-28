@@ -30,8 +30,8 @@ watchEffect(() => {
     }
   }
   if (previousX >= 0) {
-    const closingTags = '</li></ol></li>'.repeat(previousX);
-    acc += `${closingTags}</ol>`;
+    const closingTags = '</li></ol>'.repeat(previousX);
+    acc += `${closingTags}</li></ol>`;
   }
   tableOfContent.value = acc;
 });

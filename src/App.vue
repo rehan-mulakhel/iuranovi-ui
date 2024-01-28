@@ -4,26 +4,26 @@ import { RouterLink, RouterView } from 'vue-router';
 
 <template>
   <header id="header">
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <RouterLink to="/">Iuranovi</RouterLink>
-      <RouterLink to="/about">À propos de</RouterLink>
-    </div>
+    <RouterLink to="/">
+      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="100%" />
+    </RouterLink>
   </header>
 
-  <RouterView />
+  <div id="main">
+    <RouterView />
+  </div>
 
-  <footer id="footer">Tous droits réservés</footer>
+  <footer id="footer">
+    <ul>
+      <li>
+        <RouterLink to="/about">À propos de</RouterLink>
+      </li>
+      <li>Publicité</li>
+      <li>CGU</li>
+    </ul>
+    <p>&#169; Iuranovi 2024</p>
+  </footer>
 </template>
 
 <style scoped>
-@media (min-width: 960px) {
-}
 </style>

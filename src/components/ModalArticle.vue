@@ -32,7 +32,7 @@ function onClose(event) {
   </Transition>
 </template>
 
-<style>
+<style scoped>
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -50,7 +50,7 @@ function onClose(event) {
   max-width: 300px;
   margin: auto;
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: var(--color-background);
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -59,16 +59,17 @@ function onClose(event) {
 .modal-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-soft);
   font-weight: 700;
   padding-bottom: 8px;
 }
 
 .modal-header button {
-  background-color: #f00;
+  background-color: var(--c-red-dark);
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: var(--c-white-soft);
+  cursor: pointer;
   font-weight: 700;
   padding: 4px 8px;
 }

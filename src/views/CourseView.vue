@@ -34,7 +34,7 @@ watchEffect(() => {
 .env-info header,
 .env-question header,
 .env-warn header {
-  color: #fff;
+  color: var(--c-white-soft);
   font-weight: 700;
   padding: 0 4px;
 }
@@ -45,28 +45,28 @@ watchEffect(() => {
 }
 
 .env-info {
-  background-color: #ddf;
+  background-color: var(--color-info-body);
 }
 .env-info header {
-  background-color: #008;
+  background-color: var(--color-info-head);
 }
 
 .env-question {
-  background-color: #c9eba0;
+  background-color: var(--color-question-body);
 }
 .env-question header {
-  background-color: #168a35;
+  background-color: var(--color-question-head);
 }
 
 .env-warn {
-  background-color: #fdd;
+  background-color: var(--color-warn-body);
 }
 .env-warn header {
-  background-color: #800;
+  background-color: var(--color-warn-head);
 }
 
 .tabs-container {
-  border: 1px solid black;
+  border: 1px solid var(--color-tab-border);
   margin: 10px 0;
 }
 .tabs-container header,
@@ -74,8 +74,8 @@ watchEffect(() => {
   padding: 0 10px;
 }
 .tab header {
-  background-color: #ddd;
-  border: 1px solid black;
+  background-color: var(--color-tab-header);
+  border: 1px solid var(--color-tab-border);
   cursor: pointer;
   font-weight: 700;
 }
@@ -91,25 +91,22 @@ watchEffect(() => {
 }
 
 .course a {
-  border-bottom: 1px solid blue;
-  color: #00f;
+  border-bottom: 1px solid var(--color-text-link);
+  color: var(--color-text-link);
   text-decoration: none;
 }
 
 mark {
-  background-color: #eee389;
+  background-color: var(--color-text-mark);
 }
 
 header [data-art] {
-  color: #ffbe6f;
+  color: var(--color-art-head);
 }
 
 [data-art] {
-  color: #8c720c;
+  color: var(--color-art);
   cursor: pointer;
   font-weight: 700;
-}
-
-@media (min-width: 960px) {
 }
 </style>

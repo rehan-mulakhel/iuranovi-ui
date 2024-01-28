@@ -61,8 +61,8 @@ watchEffect(() => {
   border: none;
 }
 .prev-next div {
-  background-color: #bf8d32;
-  color: #110d0d;
+  background-color: var(--c-orange-soft);
+  color: var(--color-text);
   margin: 8px;
   padding: 8px;
 }

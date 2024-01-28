@@ -107,10 +107,8 @@ function handleTab() {
   font-size: 0.9em;
 }
 .article-footnotes {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-dark);
   padding-left: 32px;
   padding-top: 16px;
-}
-@media (min-width: 960px) {
 }
 </style>
