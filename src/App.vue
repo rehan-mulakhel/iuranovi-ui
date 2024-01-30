@@ -25,5 +25,4 @@ import { RouterLink, RouterView } from 'vue-router';
   </footer>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

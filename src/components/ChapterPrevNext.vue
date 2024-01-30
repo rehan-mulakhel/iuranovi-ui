@@ -10,14 +10,14 @@ const props = defineProps({
   },
 });
 
-import { ref, watchEffect, toRaw } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const prevSlug = ref(null);
 const nextSlug = ref(null);
 
 watchEffect(() => {
-  const chapters = structuredClone(toRaw(props.chapters));
+  const chapters = props.chapters;
   const index = chapters.findIndex((c) => c.slug === props.current);
   if (index === -1) {
     prevSlug.value = null;

@@ -39,5 +39,4 @@ function process(content) {
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
