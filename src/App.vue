@@ -18,8 +18,9 @@ import { RouterLink, RouterView } from 'vue-router';
       <li>
         <RouterLink to="/about">À propos de</RouterLink>
       </li>
-      <li>Publicité</li>
-      <li>CGU</li>
+      <li>
+        <RouterLink to="/ad">Publicité</RouterLink>
+      </li>
     </ul>
     <p>&#169; Iuranovi 2024</p>
   </footer>

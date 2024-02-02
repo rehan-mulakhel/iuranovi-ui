@@ -27,13 +27,12 @@ const courses = [
 <template>
   <div>
     <h1>Le droit suisse</h1>
+    <p>Iuranovi est une plate-forme qui offre des cours de droit en ligne.</p>
     <p>
-      Iuranovi est une plate-forme qui offre des cours de droit suisse en ligne.
+      Nous ciblons principalement les étudiant·e·s universitaires même si tout
+      le monde peut consulter nos contenus.
     </p>
-    <p>
-      Nous ciblons principalement les étudiant·e·s universitaires mais tout le
-      monde peut consulter nos contenus.
-    </p>
+    <p>Pour le moment, les cours ci-dessous sont disponibles en français.</p>
 
     <ul id="courses-list">
       <li v-for="(course, index) in courses" :key="index">
