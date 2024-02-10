@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
 import { useFetch } from '../fetch.js';
 import ChapterDocument from '../components/ChapterDocument.vue';
 import ChapterPrevNext from '../components/ChapterPrevNext.vue';
+import LoaderSpinner from '../components/LoaderSpinner.vue';
 
 const route = useRoute();
 
@@ -35,7 +36,9 @@ function process(content) {
       />
       <ChapterPrevNext :chapters="course.chapters" :current="chapterSlug" />
     </div>
-    <div v-else>Loading...</div>
+    <div v-else>
+      <LoaderSpinner />
+    </div>
   </div>
 </template>
 

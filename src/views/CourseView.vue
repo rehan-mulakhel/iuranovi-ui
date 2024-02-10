@@ -3,6 +3,7 @@ import { ref, watchEffect, provide } from 'vue';
 import { RouterView, useRoute } from 'vue-router';
 import { useFetch } from '../fetch.js';
 import CourseNavigation from '../components/CourseNavigation.vue';
+import LoaderBar from '../components/LoaderBar.vue';
 
 const route = useRoute();
 const url = ref(null);
@@ -25,7 +26,9 @@ watchEffect(() => {
         :chapters="data.chapters"
       />
     </template>
-    <template v-else>Loading...</template>
+    <template v-else>
+      <LoaderBar />
+    </template>
     <RouterView />
   </div>
 </template>

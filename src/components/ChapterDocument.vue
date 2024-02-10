@@ -111,4 +111,7 @@ function handleTab() {
   padding-left: 32px;
   padding-top: 16px;
 }
+.chapter-doc {
+  overflow-x: scroll;
+}
 </style>

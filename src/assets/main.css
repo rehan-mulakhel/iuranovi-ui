@@ -37,8 +37,3 @@ a {
   color: var(--color-text-link);
   transition: 0.4s;
 }
-
-@media (min-width: 1024px) {
-  body {
-  }
-}

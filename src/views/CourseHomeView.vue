@@ -1,6 +1,7 @@
 <script setup>
 import { inject, nextTick, ref, watch, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
+import LoaderSpinner from '../components/LoaderSpinner.vue';
 
 const router = useRouter();
 const { data, error } = inject('course');
@@ -62,7 +63,9 @@ watch(
       <h2>Table des matières</h2>
       <div class="toc" v-html="tableOfContent"></div>
     </div>
-    <div v-else>Loading...</div>
+    <div v-else>
+      <LoaderSpinner />
+    </div>
   </div>
 </template>
 
