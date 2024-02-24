@@ -6,11 +6,13 @@
     <p>
       Iuranovi est disponible gratuitement bien que le projet ait un coût
       important. Celui-ci est financé par les espaces publicitaires que nous
-      louons aux annonceurs.
+      louons aux annonceurs. Les espaces vacants sont remplis par Google
+      AdSense.
     </p>
     <p>Nous offrons trois emplacements sur notre site:</p>
     <ul>
-      <li>la page d'accueil,</li>
+      <li>la page d'accueil du site,</li>
+      <li>la page de description d'un cours,</li>
       <li>le début d'un chapitre,</li>
       <li>la fin d'un chapitre.</li>
     </ul>
@@ -22,11 +24,21 @@
       cours sont respectivement de CHF 799.- et CHF 399.- par mois hors TVA.
     </p>
 
+    <h2>Les règles de confidentialité</h2>
+    <p>
+      En consultant les ressources mises à la disposition des internautes,
+      ceux-ci acceptent la collecte, le partage, et l'utilisation de leurs
+      données par Google AdSense. Par ailleurs, des tiers sont susceptibles de
+      placer et de lire des cookies sur les navigateurs ou d'utiliser des pixels
+      espions pour collecter des informations suite à la diffusion d'annonces
+      sur Iuranovi.
+    </p>
+
     <h2>Contact</h2>
     <p>
       Pour le moment, nous ne disposons pas de formulaires pour recevoir des
       propositions. C'est pourquoi vous pouvez nous atteindre sur
-      <a href="https://www.linkedin.com/company/iuranovi-1/">
+      <a href="https://www.linkedin.com/company/iuranovisa/">
         notre page LinkedIn </a
       >.
     </p>

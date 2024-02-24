@@ -36,7 +36,7 @@
     <p>
       Vous souhaitez entrer en contact pour poser une question ou rejoindre
       l'équipe ? Alors rendez-vous sur
-      <a href="https://www.linkedin.com/company/iuranovi-1/">
+      <a href="https://www.linkedin.com/company/iuranovisa/">
         notre page LinkedIn </a
       >.
     </p>
