@@ -2,24 +2,42 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-4662723805409575">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="connect-src
+        'self'
+        https://app.lexdocta.com
+        pagead2.googlesyndication.com"
+    >
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="frame-src
+        https://js.stripe.com
+        https://hooks.stripe.com
+        googleads.g.doubleclick.net tpc.googlesyndication.com"
+    >
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src
+        'self'
+        https://cdn.jsdelivr.net 'unsafe-eval'
+        https://js.stripe.com
+        https://apis.google.com
+        https://pagead2.googlesyndication.com
+        https://partner.googleadservices.com
+        https://tpc.googlesyndication.com
+        https://www.googletagservices.com
+        https://adservice.google.com"
+    >
+    <link rel="icon" href="/favicon.ico">
     <title>Iuranovi</title>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$']]
-        },
-        svg: {
-          fontCache: 'global'
-        }
-      };
-    </script>
+    <script src="/src/assets/mathjax-local.js" async></script>
     <script type="text/javascript" id="MathJax-script" async
       src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-svg.js">
     </script>
